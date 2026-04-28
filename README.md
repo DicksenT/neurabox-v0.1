@@ -25,7 +25,7 @@ Get the latest binary from [Releases]
 ### 2. Initialize a policy
 
 ```bash
-neurabox.exe --init
+.\neurabox-v0.1.exe --init
 ```
 
 This creates `nb-policy.yaml` with safe defaults. Edit it to fit your project.
@@ -47,7 +47,7 @@ You can get a free DeepSeek API key at `platform.deepseek.com`. NeuraBox support
 ### 4. Run NeuraBox
 
 ```bash
-neurabox.exe "add a login route with basic validation"
+.\neurabox-v0.1.exe "add a login route with basic validation"
 ```
 
 NeuraBox will:
