@@ -105,12 +105,6 @@ checks:
 - `blocks` – files that will never be exported (e.g., `.env`)
 - `checks` – shell commands that must pass. If any check fails, the code is blocked.
 
-For Node/JS projects, you’ll likely add:
-
-```yaml
-- cname: "eslint"
-  command: "npx eslint ."
-```
 
 ## Why not just use a Git branch?
 
