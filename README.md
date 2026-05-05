@@ -6,6 +6,7 @@ AI coding agents (Cursor, Devin, Copilot) write code fast. Reviewing it safely i
 
 NeuraBox sits *before* the code touches your project. It runs the AI's output in an isolated Docker sandbox, enforces your policy, and only exports code that passes — with a full audit trail.
 
+
 > **Not a scanner. Not a reviewer. A gate.**
 
 ---
@@ -25,7 +26,7 @@ Get the latest binary from [Releases]
 ### 2. Initialize a policy
 
 ```bash
-.\neurabox-v0.1.exe --init
+.\neurabox-v0.2.exe --init
 ```
 
 This creates `nb-policy.yaml` with safe defaults. Edit it to fit your project.
@@ -42,12 +43,12 @@ ai:
   key: "sk-your-api-key-here"
 ```
 
-You can get a free DeepSeek API key at `platform.deepseek.com`. NeuraBox supports any OpenAI-compatible API.
+NeuraBox supports any OpenAI-compatible API.
 
 ### 4. Run NeuraBox
 
 ```bash
-.\neurabox-v0.1.exe "add a login route with basic validation"
+.\neurabox-v0.2.exe "add a login route with basic validation"
 ```
 
 NeuraBox will:
@@ -119,6 +120,13 @@ Branches are for reviewing code after it exists. NeuraBox generates and verifies
 
 I'm actively hardening the isolation model and plan to move to true hardware-level sandboxing.
 
+## What next?
+
+- harden up the sandbox, may change to firecracker
+- Agents integration
+- encrypt audit
+- cloud-based
+
 ## Privacy & telemetry
 
 The binary sends no code or prompts to any server besides the AI provider you configure. Audit logs are stored locally in `audit.log`. telemetry just for statistic purpose will not be sold or set to public
@@ -134,7 +142,3 @@ If you’re using AI coding agents (Cursor, Copilot, Devin) and want to help sha
 - What policies would you actually enforce?
 - Is network-disabled Docker enough, or do you need hardware-level isolation?
 - What’s missing before you’d use this on a real project?
-
-## License
-
-Source available for evaluation. Full license to be determined.
