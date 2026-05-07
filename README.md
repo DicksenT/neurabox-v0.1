@@ -25,32 +25,38 @@ Get the latest binary from [Releases]
 
 ### 2. Initialize a policy
 
+for windows
 ```bash
 .\neurabox-v0.2.exe --init
 ```
 
+for linux
+```bash
+.\neurabox --init
+```
 This creates `nb-policy.yaml` with safe defaults. Edit it to fit your project.
 
 ### 3. Add your AI provider
 
-Open `nb-policy.yaml` and fill in the `ai` section:
+create `.env` and add the necessary variable:
 
-```yaml
-ai:
-  ainame: "DeepSeek"           # or OpenAI, etc.
-  baseurl: "https://api.deepseek.com"
-  model: "deepseek-chat"
-  key: "sk-your-api-key-here"
+```bash
+API_KEY= ""
+AI_BASE_URL= "https://api.deepseek.com"
+AI_MODEL= "deepseek-chat"
 ```
-
 NeuraBox supports any OpenAI-compatible API.
 
 ### 4. Run NeuraBox
-
+for windows
 ```bash
 .\neurabox-v0.2.exe "add a login route with basic validation"
 ```
 
+for linux
+```bash
+.\neurabox "add a login route with basic validation"
+```
 NeuraBox will:
 
 - Copy your project into an isolated shadow directory
@@ -68,12 +74,6 @@ The default `nb-policy.yaml` looks like this — customize it for your stack:
 ```yaml
 version: "0.1"
 image: "node:20-alpine"       # Docker image for sandbox
-
-ai:
-  ainame: "DeepSeek"
-  baseurl: "https://api.deepseek.com"
-  model: "deepseek-chat"
-  key: "sk-..."
 
 mounts:
   - source: "."
