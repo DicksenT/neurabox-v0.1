@@ -32,7 +32,7 @@ for windows
 
 for linux
 ```bash
-.\neurabox --init
+.\neurabox-linux --init
 ```
 This creates `nb-policy.yaml` with safe defaults. Edit it to fit your project.
 
@@ -55,7 +55,7 @@ for windows
 
 for linux
 ```bash
-.\neurabox "add a login route with basic validation"
+.\neurabox-linux "add a login route with basic validation"
 ```
 NeuraBox will:
 
