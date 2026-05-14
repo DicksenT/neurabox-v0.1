@@ -21,18 +21,14 @@ NeuraBox sits *before* the code touches your project. It runs the AI's output in
 
 ### 1. Download
 
-Get the latest binary from [Releases]
-
-### 2. Initialize a policy
-
-for windows
+Get the latest binary from [Releases] or run
 ```bash
-.\neurabox-v0.2.exe --init
+npm install -g neurabox
 ```
 
-for linux
+### 2. Initialize a policy
 ```bash
-.\neurabox-linux --init
+neurabox --init
 ```
 This creates `nb-policy.yaml` with safe defaults. Edit it to fit your project.
 
@@ -48,14 +44,8 @@ AI_MODEL= "deepseek-chat"
 NeuraBox supports any OpenAI-compatible API.
 
 ### 4. Run NeuraBox
-for windows
 ```bash
-.\neurabox-v0.2.exe "add a login route with basic validation"
-```
-
-for linux
-```bash
-.\neurabox-linux "add a login route with basic validation"
+neurabox "add a login route with basic validation"
 ```
 NeuraBox will:
 
@@ -107,9 +97,19 @@ checks:
 - `checks` – shell commands that must pass. If any check fails, the code is blocked.
 
 
-## Why not just use a Git branch?
+## How is this different?
 
-Branches are for reviewing code after it exists. NeuraBox generates and verifies code before it touches your files. It's an airlock: if the policy fails, the code never reaches your repo.
+**Git worktree/branches** — No policy enforcement, no approval gate, 
+no audit trail. Delete the worktree and the history is gone.
+
+**Hooks/scripts** — The agent governing itself. NeuraBox is external 
+— the agent has no say in whether its output passes.
+
+**CodeRabbit/PR bots** — Advisory only, after code lands in repo. 
+NeuraBox blocks before code exists in your codebase.
+
+**Snyk/SonarQube** — Finds vulnerabilities in code that already exists. 
+NeuraBox decides whether code is allowed to exist at all.
 
 ## Current limitations (early beta)
 
@@ -127,9 +127,9 @@ I'm actively hardening the isolation model and plan to move to true hardware-lev
 - encrypt audit
 - cloud-based
 
-## Privacy & telemetry
+## Privacy
 
-The binary sends no code or prompts to any server besides the AI provider you configure. Audit logs are stored locally in `audit.log`. telemetry just for statistic purpose will not be sold or set to public
+The binary sends no code, prompts or data to any server besides the AI provider you configure. 
 
 ## Feedback & early access
 
