@@ -1,9 +1,3 @@
-
-
-https://github.com/user-attachments/assets/0d709f93-3e9c-4658-8ed2-369fb7eaa07d
-
-
-
 # NeuraBox
 
 **An airlock for AI-generated code.**
