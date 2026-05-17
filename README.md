@@ -1,3 +1,9 @@
+
+
+https://github.com/user-attachments/assets/0d709f93-3e9c-4658-8ed2-369fb7eaa07d
+
+
+
 # NeuraBox
 
 **An airlock for AI-generated code.**
@@ -13,7 +19,7 @@ NeuraBox sits *before* the code touches your project. It runs the AI's output in
 
 ## Demo
 
-[Watch the 2-minute demo](https://youtu.be/GQigqCTQTzA)
+https://github.com/user-attachments/assets/582e8da2-51ed-4194-bd5e-7cdd850f2a7e
 
 ---
 
